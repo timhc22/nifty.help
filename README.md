@@ -1,2 +1,2 @@
-# nifty.help
-WTF is an NFT?
+# Nifty.help
+
