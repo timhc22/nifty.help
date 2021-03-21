@@ -7,6 +7,9 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import PageOne from "./pages/PageOne";
 import PageTwo from "./pages/PageTwo";
 import PageThree from "./pages/PageThree";
+import PageFour from "./pages/PageFour";
+import PageFive from "./pages/PageFive";
+import Home from "./pages/Home";
 
 const drawerWidth = 240; // duplicate in SideMenu for now
 const useStyles = makeStyles((theme: Theme) =>
@@ -58,9 +61,12 @@ function App() {
         <div className={classes.drawerHeader} />
 
         <Switch>
-          <Route exact path="/page-one" component={PageOne}/>
-          <Route exact path="/page-two" component={PageTwo}/>
-          <Route exact path="/page-three" component={PageThree}/>
+          <Route exact path="/home" component={Home}/>
+          <Route exact path="/what-are-nfts" component={PageOne}/>
+          <Route exact path="/why-nfts" component={PageTwo}/>
+          <Route exact path="/how-they-work" component={PageThree}/>
+          <Route exact path="/get-involved" component={PageFour}/>
+          <Route exact path="/faqs" component={PageFive}/>
           <Redirect to="/"/>
         </Switch>
       </main>

@@ -9,6 +9,9 @@ const PageText = ({pageText}) => {
   return pageText.map((item: any) => {
     return (
       <div key={item.id}>
+        <Typography paragraph>
+          {item.heading}
+        </Typography>
         <Typography>{item.text}</Typography>
       </div>
     );
@@ -39,17 +42,13 @@ export default function PageOne(): JSX.Element {
     <section className="container">
       <div>
         <Container maxWidth="sm">
-        <Typography paragraph>
-          A really short story with not many pages
-        </Typography>
-
-        {/*pageNeighbours={1}*/}
-        <PageText pageText={currentComments}/>
-        <Pagination count={pages}
-                    page={page}
-                    color="primary"
-                    onChange={onPageChanged}
-        />
+          {/*pageNeighbours={1}*/}
+          <PageText pageText={currentComments}/>
+          <Pagination count={pages}
+                      page={page}
+                      color="primary"
+                      onChange={onPageChanged}
+          />
         </Container>
       </div>
     </section>

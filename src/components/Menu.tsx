@@ -140,18 +140,28 @@ export default function Menu(props: any) {
         <Divider/>
         <List>
           <ListItem button>
-            <Link to="/page-one" className={classes.menuLink}>
-              <ListItemText primary="Page One" />
+            <Link to="/what-are-nfts" className={classes.menuLink}>
+              <ListItemText primary="WTFlip is an NFT?" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/page-two" className={classes.menuLink}>
-              <ListItemText primary="Page One" />
+            <Link to="/why-nfts" className={classes.menuLink}>
+              <ListItemText primary="Why NFTS?" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/page-three" className={classes.menuLink}>
-              <ListItemText primary="Page One" />
+            <Link to="/how-they-work" className={classes.menuLink}>
+              <ListItemText primary="How They Work." />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/get-involved" className={classes.menuLink}>
+              <ListItemText primary="Get Involved!" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/faqs" className={classes.menuLink}>
+              <ListItemText primary="Questions?" />
             </Link>
           </ListItem>
         </List>
