@@ -42,10 +42,10 @@ export default function DashboardPage(): JSX.Element {
     <section className="container">
       <div>
         <section className="container">
-          <h2>Dashboard</h2>
-          <Link to="/" className="button">
-            Dashboard
-          </Link>
+          <h2>3D Display</h2>
+          {/*<Link to="/" className="button">*/}
+          {/*  Dashboard*/}
+          {/*</Link>*/}
         </section>
 
         <Canvas camera={{ position: [0.4,2,1]}}>

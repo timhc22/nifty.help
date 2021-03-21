@@ -19,7 +19,7 @@ function App() {
           <Toolbar>
             <Typography variant="h6" >
               <Link to="/" className="logo">
-                React
+                Nifty
               </Link>
             </Typography>
           </Toolbar>
