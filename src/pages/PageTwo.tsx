@@ -39,14 +39,13 @@ export default function PageOne(): JSX.Element {
             color="primary"
             onChange={onPageChanged}
           />
+          { page === pages ?
+            <Link to="/how-they-work" className="pagePagination--link">
+              <ListItemText primary="How they work? ->" />
+            </Link>
+            : ''
+          }
         </Container>
-
-        { page === pages ?
-          <Link to="/how-they-work" className="pagePagination--link">
-            <ListItemText primary="How they work? ->" />
-          </Link>
-          : ''
-        }
       </div>
     </section>
   );

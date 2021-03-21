@@ -40,13 +40,13 @@ export default function PageOne(): JSX.Element {
             color="primary"
             onChange={onPageChanged}
           />
+          { page === pages ?
+            <Link to="/why-nfts" className="pagePagination--link">
+              <ListItemText primary="Why NFTS? ->"/>
+            </Link>
+            : ''
+          }
         </Container>
-        { page === pages ?
-          <Link to="/why-nfts" className="pagePagination--link">
-            <ListItemText primary="Why NFTS? ->"/>
-          </Link>
-          : ''
-        }
       </div>
     </section>
   );
