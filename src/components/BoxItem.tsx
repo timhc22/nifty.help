@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useLoader} from "react-three-fiber";
+import { useLoader } from "react-three-fiber";
 import * as THREE from "three";
 
 export default function Box({url}: any) {

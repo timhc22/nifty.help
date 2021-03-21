@@ -14,6 +14,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import {createStyles, makeStyles, Theme, useTheme} from "@material-ui/core/styles";
 import Account from "./Account";
+import {ListItemText} from "@material-ui/core";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -37,6 +38,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2),
+    },
+    menuLink: {
+      textDecoration: 'none',
+      color: 'Black',
     },
     hide: {
       display: 'none',
@@ -135,18 +140,18 @@ export default function Menu(props: any) {
         <Divider/>
         <List>
           <ListItem button>
-            <Link to="/page-one" className="button">
-              Page One
+            <Link to="/page-one" className={classes.menuLink}>
+              <ListItemText primary="Page One" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/page-two" className="button">
-              Page Two
+            <Link to="/page-two" className={classes.menuLink}>
+              <ListItemText primary="Page One" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/page-three" className="button">
-              Page Three
+            <Link to="/page-three" className={classes.menuLink}>
+              <ListItemText primary="Page One" />
             </Link>
           </ListItem>
         </List>
