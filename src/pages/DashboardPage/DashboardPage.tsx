@@ -11,7 +11,7 @@ const CameraController = () => {
     () => {
       const controls = new OrbitControls(camera, gl.domElement);
 
-      controls.minDistance = 3;
+      controls.minDistance = 1;
       controls.maxDistance = 20;
       return () => {
         controls.dispose();
@@ -48,7 +48,7 @@ export default function DashboardPage(): JSX.Element {
           </Link>
         </section>
 
-        <Canvas camera={{ position: [1,1,1]}}>
+        <Canvas camera={{ position: [0.4,2,1]}}>
           <CameraController />
           <ambientLight />
           <Suspense fallback={null}>

@@ -13,7 +13,6 @@ export default function Box({url}: any) {
       rotation={[0.1, 0.1, 0.5]}
       scale={[1.5,0.1,1.5]}
     >
-
       <boxBufferGeometry attach="geometry" args={[1,1,1]} />
       <meshStandardMaterial attach="material" map={texture} transparent={true} />
     </mesh>
