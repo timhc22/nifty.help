@@ -13,6 +13,7 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import {createStyles, makeStyles, Theme, useTheme} from "@material-ui/core/styles";
+import Account from "./Account";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -74,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function SideMenu(props: any) {
+export default function Menu(props: any) {
   const classes = useStyles();
   const theme = useTheme();
   const handleDrawerOpen = () => {
@@ -110,6 +111,12 @@ export default function SideMenu(props: any) {
             </Link>
           </Typography>
         </Toolbar>
+
+        {/*<div style={{*/}
+        {/*  float: 'right'*/}
+        {/*}}>*/}
+        {/*  <Account/>*/}
+        {/*</div>*/}
       </AppBar>
       <Drawer
         className={classes.drawer}

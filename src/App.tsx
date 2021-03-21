@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import clsx from 'clsx';
 import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
-import SideMenu from "./components/SideMenu";
+import Menu from "./components/Menu";
 import {Redirect, Route, Switch} from "react-router-dom";
 import PageOne from "./pages/PageOne";
 import PageTwo from "./pages/PageTwo";
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className={classes.root}>
 
-      <SideMenu open={open} setOpen={setOpen} />
+      <Menu open={open} setOpen={setOpen} />
 
       <main
         className={clsx(classes.content, {

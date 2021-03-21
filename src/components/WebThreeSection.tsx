@@ -9,6 +9,7 @@ import {
 } from "@web3-react/injected-connector";
 import {UserRejectedRequestError as UserRejectedRequestErrorWalletConnect} from "@web3-react/walletconnect-connector";
 import {Spinner} from './Spinner';
+import Account from "./Account";
 
 enum ConnectorNames {
   Injected = 'Injected',
@@ -35,26 +36,6 @@ function getErrorMessage(error: Error) {
     console.error(error)
     return 'An unknown error occurred. Check the console for more details.'
   }
-}
-
-function Account() {
-  const {account} = useWeb3React()
-
-  return (
-    <div style={{
-      marginTop: '0.5rem',
-      marginBottom: '0.5rem'
-    }}>
-      <span>Account:</span>
-      <span>
-        {account === null
-          ? '-'
-          : account
-            ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}`
-            : ''}
-      </span>
-    </div>
-  )
 }
 
 export default function WebThreeSection() {
