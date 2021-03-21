@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function DashboardPage(): JSX.Element {
 
-  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const apiURL = "https://gc4fvpbabl.execute-api.eu-west-2.amazonaws.com/live";
 
-  const fetchData = async () => {
-    const response = await axios.get(apiURL);
-    console.log(response);
+  useEffect(() => {
+    async function fetchImage() {
+      const response = await axios.get(apiURL);
+      console.log(response);
 
-    let data = JSON.parse(response.data.Payload);
-    setImage(data.body);
-  }
+      let data = JSON.parse(response.data.Payload);
+      let imageUrl = `https://${data.body}.ipfs.dweb.link`;
+      setImageUrl(imageUrl);
+    }
+    fetchImage()
+  }, [imageUrl, setImageUrl])
 
   return (
     <section className="container">
@@ -25,12 +29,8 @@ export default function DashboardPage(): JSX.Element {
           </Link>
         </section>
 
-        <button className="fetch-button" onClick={fetchData}>
-          Fetch Data
-        </button>
 
-
-        Image: {image}
+        <img src={imageUrl} />
 
       </div>
     </section>
