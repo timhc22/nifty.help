@@ -13,7 +13,7 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import {createStyles, makeStyles, Theme, useTheme} from "@material-ui/core/styles";
-import Account from "./Account";
+// import Account from "./Account";
 import {ListItemText} from "@material-ui/core";
 
 const drawerWidth = 240;

@@ -26,7 +26,7 @@ export default function PageOne(): JSX.Element {
       setPage(page);
       console.log(page)
     },
-    [page]
+    []
   );
 
   // https://codesandbox.io/s/react-pagination-with-hooks-2i1hx?file=/src/CommentWithPagination.js:471-581
