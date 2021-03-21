@@ -4,10 +4,10 @@ const data = [
   { id: 3, heading: "", text: "Sending someone something on the internet is actually really hard. It is easy in real life, here you go, here is 10 bucks, yes you can keep it, and it is definitely now in your hand but not mine..\n" },
   { id: 4, heading: "", text: "Doing this on the internet is a pain, and really difficult (this is why it's hard to explain all this). And this is why it has taken so long for blockchains to be invented..\n" },
   { id: 5, heading: "", text: "It is a large part of why you have to type so many passwords all the time, especially when sending money online..\n" },
-  { id: 5, heading: "", text: "The internet makes it very very easy to copy stuff..\n" },
-  { id: 5, heading: "", text: "But not to send it.\n" },
-  { id: 5, heading: "", text: "So what exactly am I sending when I buy or send an NFT?\n" },
-  { id: 5, heading: "", text: "Well.. Let's look into that question with this demo site! Enjoy!\n" },
+  { id: 6, heading: "", text: "The internet makes it very very easy to copy stuff..\n" },
+  { id: 7, heading: "", text: "But not to send it.\n" },
+  { id: 8, heading: "", text: "So what exactly am I sending when I buy or send an NFT?\n" },
+  { id: 9, heading: "", text: "Well.. Let's look into that question with this demo site! Enjoy!\n" },
 ];
 
 export { data };

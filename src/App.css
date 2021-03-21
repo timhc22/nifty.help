@@ -17,8 +17,44 @@
   color: #61dafb;
 }
 
-
 .logo {
   color: white;
   text-decoration: none;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.homeText {
+  font-size: 5vw !important;
+  /*line-height: 0.5vw !important;*/
+}
+
+.enterButton {
+  text-align: center;
+}
+
+.enterButton span {
+  font-size: 1.5vw;
+}
+
+.pagePagination {
+  padding: 2vw;
+}
+
+.pagePagination--link {
+  text-align: right;
+}
+
+.pageText--heading {
+  font-size: 2vw !important;
+}
+
+.pageText--body {
+  font-size: 1vw !important;
+}
+

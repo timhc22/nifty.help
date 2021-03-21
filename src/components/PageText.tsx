@@ -6,10 +6,10 @@ export default function PageText({pageText}) {
   return pageText.map((item: any) => {
     return (
       <div key={item.id}>
-        <Typography paragraph>
+        <Typography paragraph className="pageText--heading">
           {item.heading}
         </Typography>
-        <Typography>{item.text}</Typography>
+        <Typography className="pageText--body">{item.text}</Typography>
       </div>
     );
   });

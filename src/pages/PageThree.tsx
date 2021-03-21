@@ -4,6 +4,8 @@ import { Canvas, useThree } from 'react-three-fiber';
 import BoxItem from "../components/BoxItem";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import WebThreeSection from "../components/WebThreeSection";
+import {Link} from "react-router-dom";
+import {ListItemText} from "@material-ui/core";
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -57,6 +59,10 @@ export default function PageThree(): JSX.Element {
             <BoxItem url={[imageUrl]}/>
           </Suspense>
         </Canvas>
+
+        <Link to="/get-involved" className="pagePagination--link">
+          <ListItemText primary="Get Involved ->" />
+        </Link>
 
       </div>
     </section>

@@ -1,5 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
+import {Link} from "react-router-dom";
+import {ListItemText} from "@material-ui/core";
 
 export default function PageFour(): JSX.Element {
 
@@ -9,6 +11,9 @@ export default function PageFour(): JSX.Element {
         <Typography paragraph>
           Hi2
         </Typography>
+        <Link to="/faqs" className="pagePagination--link">
+          <ListItemText primary="FAQs ->" />
+        </Link>
       </div>
     </section>
   );

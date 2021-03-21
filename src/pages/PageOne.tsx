@@ -1,14 +1,16 @@
 import React, {useCallback, useState} from 'react';
 import Typography from "@material-ui/core/Typography";
-import {Container} from "@material-ui/core";
+import {Container, ListItemText} from "@material-ui/core";
 import Pagination from '@material-ui/lab/Pagination';
 import { data } from "../data/pageTextWhat";
 import PageText from '../components/PageText';
+import {Link} from "react-router-dom";
+import ListItem from "@material-ui/core/ListItem";
 
 export default function PageOne(): JSX.Element {
   const [page, setPage] = useState(1);
 
-  const pages = 10;
+  const pages = 5;
   const limit = 1;
   const onPageChanged = useCallback(
     (event, page) => {
@@ -31,12 +33,20 @@ export default function PageOne(): JSX.Element {
         <Container maxWidth="sm">
           {/*pageNeighbours={1}*/}
           <PageText pageText={currentComments}/>
-          <Pagination count={pages}
-                      page={page}
-                      color="primary"
-                      onChange={onPageChanged}
+          <Pagination
+            className="pagePagination"
+            count={pages}
+            page={page}
+            color="primary"
+            onChange={onPageChanged}
           />
         </Container>
+        { page === pages ?
+          <Link to="/why-nfts" className="pagePagination--link">
+            <ListItemText primary="Why NFTS? ->"/>
+          </Link>
+          : ''
+        }
       </div>
     </section>
   );
