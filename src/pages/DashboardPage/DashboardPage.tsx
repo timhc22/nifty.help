@@ -1,30 +1,8 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import * as THREE from "three";
-import ReactDOM from 'react-dom'
-import React, { Suspense, useState, useRef, useEffect, useMemo } from 'react'
-import { Canvas, extend, useLoader, useThree, useFrame } from 'react-three-fiber'
-
-
-function Box({url}: any) {
-  const [texture]: any = useLoader(THREE.TextureLoader, url);
-  const mesh = useRef()
-  const [hover, setHover] = useState(false)
-
-  return (
-    <mesh
-      ref={mesh}
-      position={[0, 0, 0]}
-      scale={hover ? [1.2, 1, 1.2] : [1, 1, 1]}
-      onPointerOver={e => setHover(true)}
-      onPointerOut={e => setHover(false)}>
-
-      <boxBufferGeometry attach="geometry" args={[1,1,1]} />
-      <meshStandardMaterial attach="material" map={texture} transparent={true} />
-    </mesh>
-
-  )
-}
+import React, { Suspense, useState, useEffect } from 'react'
+import { Canvas } from 'react-three-fiber'
+import BoxItem from "../../components/BoxItem";
 
 export default function DashboardPage(): JSX.Element {
   const [imageUrl, setImageUrl] = useState("");
@@ -54,7 +32,7 @@ export default function DashboardPage(): JSX.Element {
 
         <Canvas camera={{ position: [2,2,2]}}>
           <Suspense fallback={null}>
-            <Box url={[imageUrl]}/>
+            <BoxItem url={[imageUrl]}/>
           </Suspense>
           <ambientLight />
         </Canvas>
