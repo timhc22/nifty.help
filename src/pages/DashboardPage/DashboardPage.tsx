@@ -1,8 +1,26 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import React, { Suspense, useState, useEffect } from 'react'
-import { Canvas } from 'react-three-fiber'
+import React, { Suspense, useState, useEffect } from 'react';
+import { Canvas, useThree } from 'react-three-fiber';
 import BoxItem from "../../components/BoxItem";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+const CameraController = () => {
+  const { camera, gl } = useThree();
+  useEffect(
+    () => {
+      const controls = new OrbitControls(camera, gl.domElement);
+
+      controls.minDistance = 3;
+      controls.maxDistance = 20;
+      return () => {
+        controls.dispose();
+      };
+    },
+    [camera, gl]
+  );
+  return null;
+};
 
 export default function DashboardPage(): JSX.Element {
   const [imageUrl, setImageUrl] = useState("");
@@ -31,10 +49,11 @@ export default function DashboardPage(): JSX.Element {
         </section>
 
         <Canvas camera={{ position: [1,1,1]}}>
+          <CameraController />
+          <ambientLight />
           <Suspense fallback={null}>
             <BoxItem url={[imageUrl]}/>
           </Suspense>
-          <ambientLight />
         </Canvas>
 
       </div>
