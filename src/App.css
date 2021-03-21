@@ -30,7 +30,7 @@
 }
 
 .homeText {
-  font-size: 5vw !important;
+  font-size:80px !important;
   /*line-height: 0.5vw !important;*/
 }
 
@@ -39,7 +39,7 @@
 }
 
 .enterButton span {
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 .pagePagination {
@@ -51,10 +51,10 @@
 }
 
 .pageText--heading {
-  font-size: 2vw !important;
+  font-size: 40px !important;
 }
 
 .pageText--body {
-  font-size: 1vw !important;
+  font-size: 16px !important;
 }
 
