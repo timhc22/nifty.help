@@ -2,21 +2,8 @@ import React, {useCallback, useState} from 'react';
 import Typography from "@material-ui/core/Typography";
 import {Container} from "@material-ui/core";
 import Pagination from '@material-ui/lab/Pagination';
-import { data } from "../data/pageText";
-
-// @ts-ignore
-const PageText = ({pageText}) => {
-  return pageText.map((item: any) => {
-    return (
-      <div key={item.id}>
-        <Typography paragraph>
-          {item.heading}
-        </Typography>
-        <Typography>{item.text}</Typography>
-      </div>
-    );
-  });
-}
+import { data } from "../data/pageTextWhat";
+import PageText from '../components/PageText';
 
 export default function PageOne(): JSX.Element {
   const [page, setPage] = useState(1);
