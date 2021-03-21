@@ -3,7 +3,7 @@ const data = [
   { id: 2, heading: "", text: "Yea, so NFTs are pretty much the same as Bitcoins (yes I can already hear the techies yelling, don't worry, I know they are not exactly). The only thing that is different about NFTs is that they are non-fungible. Uhh what? Fungi-what? Mushrooms?\n" },
   { id: 3, heading: "", text: "Fungible just means something you can swap for something else without losing anything (think of swapping a 1p coin for another 1p coin). Non-fungible.. The opposite.. Would you swap a sketch on a piece of paper for the Mona lisa? Maybe if you could.. But there is something different about them, even though they are both drawings of stuff on material.\n" },
   { id: 4, heading: "", text: "So fungible is the 'F' in NFT, and.. You guessed it.. N is the 'Non'. So what is the T? T is Token.  A token like.. something representing something else, like.. A physical soccer ticket which grants you the ability to go to a specific game at a specific time? Yes that's it! Something representing something else.. Only digital..\n" },
-  { id: 5, heading: "", text: "And thats it in a nutshell. Click the link below to check out why we need them.. (Is he really using comic sans for this site..?? 🤔)\n" },
+  { id: 5, heading: "", text: "And thats it in a nutshell. Click the link below to check out why we need them..\n" },
 ];
 
 export { data };
