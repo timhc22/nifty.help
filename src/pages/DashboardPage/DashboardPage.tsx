@@ -30,7 +30,7 @@ export default function DashboardPage(): JSX.Element {
           </Link>
         </section>
 
-        <Canvas camera={{ position: [2,2,2]}}>
+        <Canvas camera={{ position: [1,1,1]}}>
           <Suspense fallback={null}>
             <BoxItem url={[imageUrl]}/>
           </Suspense>
