@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas, useThree } from 'react-three-fiber';

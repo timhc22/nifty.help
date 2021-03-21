@@ -13,8 +13,8 @@ import {
 import {UnsupportedChainIdError, useWeb3React} from "@web3-react/core";
 import {formatEther} from "@ethersproject/units";
 import {Web3Provider} from "@ethersproject/providers";
-import {useEagerConnect, useInactiveListener} from "../hooks";
-import {injected, walletconnect, walletlink} from "../connectors";
+import {useEagerConnect, useInactiveListener} from "./hooks";
+import {injected, walletconnect} from "./connectors";
 import {Spinner} from './components/Spinner';
 import {
   NoEthereumProviderError,
@@ -26,13 +26,11 @@ import {UserRejectedRequestError as UserRejectedRequestErrorWalletConnect} from 
 enum ConnectorNames {
   Injected = 'Injected',
   WalletConnect = 'WalletConnect',
-  WalletLink = 'WalletLink',
 }
 
 const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
   [ConnectorNames.WalletConnect]: walletconnect,
-  [ConnectorNames.WalletLink]: walletlink,
 }
 
 function getErrorMessage(error: Error) {
@@ -114,7 +112,7 @@ function Balance() {
 
 function App() {
   const context = useWeb3React<Web3Provider>()
-  const {connector, library, chainId, account, activate, deactivate, active, error} = context
+  const {connector, activate, deactivate, active, error} = context // library and account are needed for sign and deactivate
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = React.useState<any>()
@@ -239,58 +237,42 @@ function App() {
               margin: 'auto'
             }}
           >
-            {!!(library && account) && (
-              <button
-                style={{
-                  height: '3rem',
-                  borderRadius: '1rem',
-                  cursor: 'pointer'
-                }}
-                onClick={() => {
-                  library
-                    .getSigner(account)
-                    .signMessage('👋')
-                    .then((signature: any) => {
-                      window.alert(`Success!\n\n${signature}`)
-                    })
-                    .catch((error: any) => {
-                      window.alert('Failure!' + (error && error.message ? `\n\n${error.message}` : ''))
-                    })
-                }}
-              >
-                Sign Message
-              </button>
-            )}
-            {connector === connectorsByName[ConnectorNames.WalletConnect] && (
-              <button
-                style={{
-                  height: '3rem',
-                  borderRadius: '1rem',
-                  cursor: 'pointer'
-                }}
-                onClick={() => {
-                  ;(connector as any).close()
-                }}
-              >
-                Kill WalletConnect Session
-              </button>
-            )}
-            {connector === connectorsByName[ConnectorNames.WalletLink] && (
-              <button
-                style={{
-                  height: '3rem',
-                  borderRadius: '1rem',
-                  cursor: 'pointer'
-                }}
-                onClick={() => {
-                  ;(connector as any).close()
-                }}
-              >
-                Kill WalletLink Session
-              </button>
-            )}
-
-
+            {/*{!!(library && account) && (*/}
+            {/*  <button*/}
+            {/*    style={{*/}
+            {/*      height: '3rem',*/}
+            {/*      borderRadius: '1rem',*/}
+            {/*      cursor: 'pointer'*/}
+            {/*    }}*/}
+            {/*    onClick={() => {*/}
+            {/*      library*/}
+            {/*        .getSigner(account)*/}
+            {/*        .signMessage('👋')*/}
+            {/*        .then((signature: any) => {*/}
+            {/*          window.alert(`Success!\n\n${signature}`)*/}
+            {/*        })*/}
+            {/*        .catch((error: any) => {*/}
+            {/*          window.alert('Failure!' + (error && error.message ? `\n\n${error.message}` : ''))*/}
+            {/*        })*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    Sign Message*/}
+            {/*  </button>*/}
+            {/*)}*/}
+            {/*{connector === connectorsByName[ConnectorNames.WalletConnect] && (*/}
+            {/*  <button*/}
+            {/*    style={{*/}
+            {/*      height: '3rem',*/}
+            {/*      borderRadius: '1rem',*/}
+            {/*      cursor: 'pointer'*/}
+            {/*    }}*/}
+            {/*    onClick={() => {*/}
+            {/*      ;(connector as any).close()*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    Kill WalletConnect Session*/}
+            {/*  </button>*/}
+            {/*)}*/}
           </div>
         </>
 
