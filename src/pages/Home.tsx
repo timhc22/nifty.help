@@ -7,7 +7,7 @@ export default function Home(): JSX.Element {
     <section className="container">
       <div>
         <Typography paragraph>
-          Hi2
+          WTFlip is an NFT?
         </Typography>
       </div>
     </section>

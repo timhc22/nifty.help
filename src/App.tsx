@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import clsx from 'clsx';
-import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import {createStyles, makeStyles, Theme, MuiThemeProvider, createMuiTheme} from "@material-ui/core/styles";
+import createPalette from '@material-ui/core/styles/createPalette';
+import createTypography from '@material-ui/core/styles/createTypography';
 import Menu from "./components/Menu";
 import {Redirect, Route, Switch} from "react-router-dom";
 import PageOne from "./pages/PageOne";
@@ -12,6 +14,15 @@ import PageFive from "./pages/PageFive";
 import Home from "./pages/Home";
 
 const drawerWidth = 240; // duplicate in SideMenu for now
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#228e22' },
+    secondary: { main: '#4d4d4d' },
+  },
+  typography: createTypography(createPalette({}), {
+    fontFamily: '"Comic Sans MS"'
+  }),
+})
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -49,29 +60,31 @@ function App() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <MuiThemeProvider theme={theme}>
+      <div className={classes.root}>
 
-      <Menu open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} />
 
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
+        <main
+          className={clsx(classes.content, {
+            [classes.contentShift]: open,
+          })}
+        >
+          <div className={classes.drawerHeader} />
 
-        <Switch>
-          <Route exact path="/home" component={Home}/>
-          <Route exact path="/what-are-nfts" component={PageOne}/>
-          <Route exact path="/why-nfts" component={PageTwo}/>
-          <Route exact path="/how-they-work" component={PageThree}/>
-          <Route exact path="/get-involved" component={PageFour}/>
-          <Route exact path="/faqs" component={PageFive}/>
-          <Redirect to="/"/>
-        </Switch>
-      </main>
+          <Switch>
+            <Route exact path="/home" component={Home}/>
+            <Route exact path="/what-are-nfts" component={PageOne}/>
+            <Route exact path="/why-nfts" component={PageTwo}/>
+            <Route exact path="/how-they-work" component={PageThree}/>
+            <Route exact path="/get-involved" component={PageFour}/>
+            <Route exact path="/faqs" component={PageFive}/>
+            <Redirect to="/home"/>
+          </Switch>
+        </main>
 
-    </div>
+      </div>
+    </MuiThemeProvider>
   );
 }
 
