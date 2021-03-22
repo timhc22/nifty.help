@@ -43,6 +43,10 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: 'none',
       color: 'Black',
     },
+    menuLinkSandbox: {
+      textDecoration: 'none',
+      color: 'Gray',
+    },
     hide: {
       display: 'none',
     },
@@ -165,7 +169,7 @@ export default function Menu(props: any) {
             </Link>
           </ListItem>
           <ListItem button>
-            <Link to="/sandbox" className={classes.menuLink}>
+            <Link to="/sandbox" className={classes.menuLinkSandbox}>
               <ListItemText primary="Sandbox" />
             </Link>
           </ListItem>

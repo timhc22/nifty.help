@@ -46,9 +46,11 @@ export default function SandBoxPage(): JSX.Element {
       <div>
         <Container maxWidth="sm">
         <Typography className="pageText--heading">
-          How they Work
+          Sandbox
         </Typography>
-        <Typography className="pageText--body">This section is under development, but check out this video to get set up with MetaMask, and then try connecting and see your account number appearing in the box below.</Typography>
+        <Typography className="pageText--body">
+          For testing new functionality
+        </Typography>
           <WebThreeSection />
 
 
