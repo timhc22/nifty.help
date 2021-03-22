@@ -141,27 +141,32 @@ export default function Menu(props: any) {
         <List>
           <ListItem button>
             <Link to="/what-are-nfts" className={classes.menuLink}>
-              <ListItemText primary="WTFlip is an NFT?" />
+              <ListItemText primary="1. WTFlip is an NFT?" />
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/why-nfts" className={classes.menuLink}>
-              <ListItemText primary="Why NFTS?" />
+              <ListItemText primary="2. Why NFTS?" />
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/how-they-work" className={classes.menuLink}>
-              <ListItemText primary="How They Work." />
+              <ListItemText primary="3. How They Work." />
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/get-involved" className={classes.menuLink}>
-              <ListItemText primary="Get Involved!" />
+              <ListItemText primary="4. Get Involved!" />
             </Link>
           </ListItem>
           <ListItem button>
             <Link to="/faqs" className={classes.menuLink}>
-              <ListItemText primary="Questions?" />
+              <ListItemText primary="5. Questions?" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/sandbox" className={classes.menuLink}>
+              <ListItemText primary="Sandbox" />
             </Link>
           </ListItem>
         </List>

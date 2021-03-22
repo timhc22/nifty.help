@@ -12,6 +12,7 @@ import PageThree from "./pages/PageThree";
 import PageFour from "./pages/PageFour";
 import PageFive from "./pages/PageFive";
 import Home from "./pages/Home";
+import SandBoxPage from "./pages/SandBoxPage";
 
 const drawerWidth = 240; // duplicate in SideMenu for now
 const theme = createMuiTheme({
@@ -73,13 +74,14 @@ function App() {
           <div className={classes.drawerHeader} />
 
           <Switch>
-            <Route exact path="/home" component={Home}/>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/what-are-nfts" component={PageOne}/>
             <Route exact path="/why-nfts" component={PageTwo}/>
             <Route exact path="/how-they-work" component={PageThree}/>
             <Route exact path="/get-involved" component={PageFour}/>
             <Route exact path="/faqs" component={PageFive}/>
-            <Redirect to="/home"/>
+            <Route exact path="/sandbox" component={SandBoxPage}/>
+            <Redirect to="/"/>
           </Switch>
         </main>
 
