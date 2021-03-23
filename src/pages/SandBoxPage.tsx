@@ -51,9 +51,12 @@ export default function SandBoxPage(): JSX.Element {
         <Typography className="pageText--body">
           For testing new functionality
         </Typography>
-          <WebThreeSection />
 
+        <WebThreeSection />
 
+        <Typography className="pageText--heading">
+          Rotate-me
+        </Typography>
         <Canvas camera={{ position: [0.4,2,1]}}>
           <CameraController />
           <ambientLight />
