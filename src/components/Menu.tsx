@@ -132,6 +132,7 @@ export default function Menu(props: any) {
         variant="persistent"
         anchor="left"
         open={props.open}
+        onKeyDown={handleDrawerClose} // todo find out if this is needed as well as handleDrawerClose on ListItems
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -143,32 +144,32 @@ export default function Menu(props: any) {
         </div>
         <Divider/>
         <List>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/what-are-nfts" className={classes.menuLink}>
               <ListItemText primary="1. WTFlip is an NFT?" />
             </Link>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/why-nfts" className={classes.menuLink}>
               <ListItemText primary="2. Why NFTS?" />
             </Link>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/how-they-work" className={classes.menuLink}>
               <ListItemText primary="3. How They Work." />
             </Link>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/get-involved" className={classes.menuLink}>
               <ListItemText primary="4. Get Involved!" />
             </Link>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/faqs" className={classes.menuLink}>
               <ListItemText primary="5. Questions?" />
             </Link>
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleDrawerClose}>
             <Link to="/sandbox" className={classes.menuLinkSandbox}>
               <ListItemText primary="Sandbox" />
             </Link>
