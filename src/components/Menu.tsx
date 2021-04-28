@@ -174,6 +174,9 @@ export default function Menu(props: any) {
               <ListItemText primary="Sandbox" />
             </Link>
           </ListItem>
+          <ListItem>
+            <Typography><a className={classes.menuLinkSandbox} href="https://unegma.com" target="_blank">Unegma LTD</a></Typography>
+          </ListItem>
         </List>
 
       </Drawer>
